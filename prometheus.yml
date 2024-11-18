@@ -2,8 +2,270 @@ global:
   scrape_interval: 60s
 
 scrape_configs:
-  - job_name: "financial_data"
+  # 1. US Bond Yield (10-Year)
+  - job_name: "us_bond_yield_10year"
     scrape_interval: 60s
     metrics_path: "/pulse"
+    params:
+      series_id: ["DGS10"]
+      series_name: ["us_bond_yield_10year"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 2. GDP Growth Rate
+  - job_name: "gdp_growth_rate"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["GDPC1"]
+      series_name: ["gdp_growth_rate"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 3. Unemployment Rate
+  - job_name: "unemployment_rate"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["UNRATE"]
+      series_name: ["unemployment_rate"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 4. Nonfarm Payrolls
+  - job_name: "nonfarm_payrolls"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["PAYEMS"]
+      series_name: ["nonfarm_payrolls"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 5. Labor Force Participation Rate
+  - job_name: "labor_force_participation_rate"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["CIVPART"]
+      series_name: ["labor_force_participation_rate"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 6. Average Hourly Earnings
+  - job_name: "average_hourly_earnings"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["CES0500000003"]
+      series_name: ["average_hourly_earnings"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 7. Consumer Price Index (CPI)
+  - job_name: "consumer_price_index"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["CPIAUCSL"]
+      series_name: ["consumer_price_index"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 8. Core CPI (Excluding Food & Energy)
+  - job_name: "core_cpi"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["CPILFESL"]
+      series_name: ["core_cpi"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 9. Producer Price Index (PPI)
+  - job_name: "producer_price_index"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["PPIACO"]
+      series_name: ["producer_price_index"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 10. Personal Consumption Expenditures (PCE) Price Index
+  - job_name: "pce_price_index"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["PCEPI"]
+      series_name: ["pce_price_index"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 11. Federal Funds Rate
+  - job_name: "federal_funds_rate"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["DFF"]
+      series_name: ["federal_funds_rate"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 12. 2-Year Treasury Yield
+  - job_name: "us_bond_yield_2year"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["DGS2"]
+      series_name: ["us_bond_yield_2year"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 13. 10-Year Treasury Yield (for Yield Curve)
+  - job_name: "us_bond_yield_10year_curve"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["DGS10"]
+      series_name: ["us_bond_yield_10year_curve"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 14. Yield Curve Spread (10-Year Minus 2-Year)
+  - job_name: "yield_curve_spread"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["T10Y2Y"]
+      series_name: ["yield_curve_spread"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 15. Consumer Sentiment Index
+  - job_name: "consumer_sentiment_index"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["UMCSENT"]
+      series_name: ["consumer_sentiment_index"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 16. ISM Manufacturing PMI
+  # TODO - FIX /
+  - job_name: "ism_manufacturing_pmi"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["ISM/MAN_PMI"]
+      series_name: ["ism_manufacturing_pmi"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 17. New Residential Construction (Housing Starts)
+  - job_name: "new_residential_construction"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["HOUST"]
+      series_name: ["new_residential_construction"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 18. S&P/Case-Shiller U.S. National Home Price Index
+  - job_name: "case_shiller_home_price_index"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["CSUSHPINSA"]
+      series_name: ["case_shiller_home_price_index"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 19. 30-Year Fixed-Rate Mortgage Average
+  - job_name: "mortgage_rate_30year"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["MORTGAGE30US"]
+      series_name: ["mortgage_rate_30year"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 20. M2 Money Supply
+  - job_name: "m2_money_supply"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["M2SL"]
+      series_name: ["m2_money_supply"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 21. Federal Reserve Total Assets
+  - job_name: "fed_total_assets"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["WALCL"]
+      series_name: ["fed_total_assets"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 22. U.S. Dollar Index
+  - job_name: "usdollar_index"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["DTWEXBGS"]
+      series_name: ["usdollar_index"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 23. Euro Area Unemployment Rate
+  - job_name: "euro_area_unemployment_rate"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["LRHUTTTTEZQ156S"]
+      series_name: ["euro_area_unemployment_rate"]
+      frequency: ["q"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 24. S&P 500 Index
+  - job_name: "sp500_index"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["SP500"]
+      series_name: ["sp500_index"]
+    static_configs:
+      - targets: ["pulse:8000"]
+
+  # 25. VIX Index (Volatility Index)
+  - job_name: "vix_index"
+    scrape_interval: 60s
+    metrics_path: "/pulse"
+    params:
+      series_id: ["VIXCLS"]
+      series_name: ["vix_index"]
     static_configs:
       - targets: ["pulse:8000"]

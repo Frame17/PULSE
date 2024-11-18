@@ -1,55 +1,58 @@
+import logging
 import os
 
 import requests
 from dotenv import load_dotenv
-from flask import Flask, Response
+from flask import Flask, Response, request
 
-# Load environment variables from .env file
 load_dotenv()
 
 app = Flask(__name__)
+logger = logging.getLogger(__name__)
 
-# Fetch FRED API key from environment variables
 API_KEY = os.getenv("FRED_API_KEY")
 API_URL = "https://api.stlouisfed.org/fred/series/observations"
-SERIES_ID = "DGS10"
+
+
+def fetch_fred_data(series_id: str, frequency: str):
+    params = {
+        "series_id": series_id,
+        "api_key": API_KEY,
+        "file_type": "json",
+        "frequency": frequency,
+        "sort_order": "desc",
+    }
+
+    response = requests.get(API_URL, params=params)
+    data = response.json()
+    return data.get("observations", [])
 
 
 @app.route("/pulse")
-def pulse():
-    # Define API request parameters
-    params = {
-        "series_id": SERIES_ID,
-        "api_key": API_KEY,
-        "file_type": "json",
-        "frequency": "d",
-        "sort_order": "desc",
-        "limit": 1,
-    }
+def metrics():
+    series_id = request.args.get("series_id")
+    series_name = request.args.get("series_name")
+    frequency = request.args.get("frequency", "d")
+
+    observations = fetch_fred_data(series_id, frequency)
+    if not observations:
+        return Response("# No data available\n", mimetype="text/plain")
 
     try:
-        response = requests.get(API_URL, params=params)
-        data = response.json()
-
-        observations = data.get("observations", [])
-        if not observations:
-            return Response("# No data available\n", mimetype="text/plain")
-
         latest_observation = observations[0]
         yield_value = float(latest_observation["value"])
-        observation_date = latest_observation["date"]
+    # pylint: disable=bare-except
+    except:
+        latest_observation = observations[1]
+        yield_value = float(latest_observation["value"])
 
-        # Prepare the Prometheus metrics format
-        metrics_data = (
-            "# HELP us_bond_yield_10year US 10-Year Treasury Yield\n"
-            "# TYPE us_bond_yield_10year gauge\n"
-            f'us_bond_yield_10year{{date="{observation_date}"}} {yield_value}\n'
-        )
+    observation_date = latest_observation["date"]
+    metrics_data = (
+        f"# TYPE {series_name} gauge\n"
+        f'{series_name}{{date="{observation_date}"}} {yield_value}\n'
+    )
 
-        return Response(metrics_data, mimetype="text/plain")
-
-    except Exception as e:
-        return Response(f"# Error fetching data: {str(e)}\n", mimetype="text/plain")
+    return Response(metrics_data, mimetype="text/plain")
 
 
 if __name__ == "__main__":
