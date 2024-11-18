@@ -1,0 +1,109 @@
+[MASTER]
+# Specify a configuration file.
+rcfile=
+
+# Python code to analyze
+ignore=
+ignore-patterns=__pycache__,.venv,.mypy_cache,.tox
+
+# List of plugins (comma-separated) to load
+load-plugins=pylint.extensions.docparams, pylint.extensions.mccabe, pylint.extensions.typing
+
+# Set the maximum number of jobs to run simultaneously
+jobs=4
+
+# Set the Python executable or environment (useful for Conda or venv)
+py-version=3.11
+
+# Disable specified Pylint messages
+disable=
+    C0103,  # Variable name doesn't conform to snake_case
+    C0114,  # Missing module docstring
+    C0115,  # Missing class docstring
+    C0116,  # Missing function or method docstring
+    R0903,  # Too few public methods (when using small utility classes)
+    R0801,  # Duplicate code (common in testing and configurations)
+    W0511,  # TODO comments
+
+[FORMAT]
+# Maximum number of characters on a single line.
+max-line-length=100
+
+# Maximum number of lines in a module
+max-module-lines=1500
+
+[DESIGN]
+# Maximum number of arguments for a function/method
+max-args=6
+
+# Maximum number of attributes for a class (default: 7)
+max-attributes=10
+
+# Maximum number of parents for a class
+max-parents=7
+
+# Maximum number of return statements in a function/method
+max-returns=6
+
+# Maximum number of branches for a function/method
+max-branches=12
+
+# Maximum number of statements in a function/method
+max-statements=50
+
+# Maximum number of public methods in a class
+max-public-methods=20
+
+# Minimum number of public methods for a class (default: 2)
+min-public-methods=0
+
+[TYPECHECK]
+# List of module names for which member attributes should not be checked (useful for dynamically generated code).
+ignored-modules=numpy,scipy,matplotlib,pandas
+
+# List of members which are set dynamically and missed by pylint inference system
+generated-members=numpy.*,scipy.*,matplotlib.*,pandas.*
+
+[IMPORTS]
+# Allow import statements to be placed at the top of the file
+allow-wildcard-with-all=no
+
+# Number of import groups
+known-standard-library=sys,os,re,subprocess,math,datetime
+known-third-party=numpy,scipy,matplotlib,pandas,flask,requests
+
+[LOGGING]
+# Logging modules to check
+logging-modules=logging
+
+[BASIC]
+# Variable names to ignore in naming convention checks
+good-names=i,j,k,x,y,z,df,_,log
+
+# Argument names to ignore
+bad-names=foo,bar,baz
+
+# Allowed module-level dunder names
+good-names-rgx=^(__[a-zA-Z_]+__|[a-z_][a-z0-9_]{1,30})$
+
+[VARIABLES]
+# Allow variables to be defined outside of __init__
+init-import=no
+
+[MISCELLANEOUS]
+# Notes to take into account as a valid TODO
+notes=TODO,FIXME,XXX,BUG,HACK
+
+[SIMILARITIES]
+# Minimum lines of a similarity to consider
+min-similarity-lines=4
+
+# Ignore comments when checking for similarities
+ignore-comments=yes
+
+# Ignore docstrings when checking for similarities
+ignore-docstrings=yes
+
+[EXCEPTIONS]
+# Exceptions that will not be considered for "broad-except" rule
+overgeneral-exceptions=Exception,RuntimeError,ValueError,KeyError,IndexError
