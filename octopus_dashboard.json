@@ -2043,8 +2043,8 @@
         "list": []
     },
     "time": {
-        "from": "2024-11-18T16:40:13.000Z",
-        "to": "2024-11-18T17:10:00.000Z"
+        "from": "now-30m",
+        "to": "now"
     },
     "timepicker": {},
     "timezone": "browser",
