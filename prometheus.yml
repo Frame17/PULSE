@@ -14,7 +14,7 @@ scrape_configs:
 
   # 2. GDP Growth Rate
   - job_name: "gdp_growth_rate"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["GDPC1"]
@@ -25,7 +25,7 @@ scrape_configs:
 
   # 3. Unemployment Rate
   - job_name: "unemployment_rate"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["UNRATE"]
@@ -36,7 +36,7 @@ scrape_configs:
 
   # 4. Nonfarm Payrolls
   - job_name: "nonfarm_payrolls"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["PAYEMS"]
@@ -47,7 +47,7 @@ scrape_configs:
 
   # 5. Labor Force Participation Rate
   - job_name: "labor_force_participation_rate"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["CIVPART"]
@@ -58,7 +58,7 @@ scrape_configs:
 
   # 6. Average Hourly Earnings
   - job_name: "average_hourly_earnings"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["CES0500000003"]
@@ -69,7 +69,7 @@ scrape_configs:
 
   # 7. Consumer Price Index (CPI)
   - job_name: "consumer_price_index"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["CPIAUCSL"]
@@ -80,7 +80,7 @@ scrape_configs:
 
   # 8. Core CPI (Excluding Food & Energy)
   - job_name: "core_cpi"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["CPILFESL"]
@@ -91,7 +91,7 @@ scrape_configs:
 
   # 9. Producer Price Index (PPI)
   - job_name: "producer_price_index"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["PPIACO"]
@@ -102,7 +102,7 @@ scrape_configs:
 
   # 10. Personal Consumption Expenditures (PCE) Price Index
   - job_name: "pce_price_index"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["PCEPI"]
@@ -153,7 +153,7 @@ scrape_configs:
 
   # 15. Consumer Sentiment Index
   - job_name: "consumer_sentiment_index"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["UMCSENT"]
@@ -165,7 +165,7 @@ scrape_configs:
   # 16. ISM Manufacturing PMI
   # TODO - FIX /
   - job_name: "ism_manufacturing_pmi"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["ISM/MAN_PMI"]
@@ -176,7 +176,7 @@ scrape_configs:
 
   # 17. New Residential Construction (Housing Starts)
   - job_name: "new_residential_construction"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["HOUST"]
@@ -187,7 +187,7 @@ scrape_configs:
 
   # 18. S&P/Case-Shiller U.S. National Home Price Index
   - job_name: "case_shiller_home_price_index"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["CSUSHPINSA"]
@@ -198,7 +198,7 @@ scrape_configs:
 
   # 19. 30-Year Fixed-Rate Mortgage Average
   - job_name: "mortgage_rate_30year"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["MORTGAGE30US"]
@@ -209,7 +209,7 @@ scrape_configs:
 
   # 20. M2 Money Supply
   - job_name: "m2_money_supply"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["M2SL"]
@@ -220,7 +220,7 @@ scrape_configs:
 
   # 21. Federal Reserve Total Assets
   - job_name: "fed_total_assets"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["WALCL"]
@@ -241,7 +241,7 @@ scrape_configs:
 
   # 23. Euro Area Unemployment Rate
   - job_name: "euro_area_unemployment_rate"
-    scrape_interval: 60s
+    scrape_interval: 5m
     metrics_path: "/pulse"
     params:
       series_id: ["LRHUTTTTEZQ156S"]

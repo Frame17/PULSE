@@ -14,7 +14,7 @@ API_KEY = os.getenv("FRED_API_KEY")
 API_URL = "https://api.stlouisfed.org/fred/series/observations"
 
 
-def fetch_fred_data(series_id: str, frequency: str):
+async def fetch_fred_data(series_id: str, frequency: str):
     params = {
         "series_id": series_id,
         "api_key": API_KEY,
@@ -29,12 +29,12 @@ def fetch_fred_data(series_id: str, frequency: str):
 
 
 @app.route("/pulse")
-def metrics():
+async def metrics():
     series_id = request.args.get("series_id")
     series_name = request.args.get("series_name")
     frequency = request.args.get("frequency", "d")
 
-    observations = fetch_fred_data(series_id, frequency)
+    observations = await fetch_fred_data(series_id, frequency)
     if not observations:
         return Response("# No data available\n", mimetype="text/plain")
 
