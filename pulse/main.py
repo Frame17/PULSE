@@ -3,7 +3,7 @@ import os
 
 import requests
 from dotenv import load_dotenv
-from flask import Flask, Response, request
+from flask import Flask, Response, jsonify, request
 
 load_dotenv()
 
@@ -29,30 +29,32 @@ async def fetch_fred_data(series_id: str, frequency: str):
 
 
 @app.route("/pulse")
-async def metrics():
+async def pulse():
     series_id = request.args.get("series_id")
-    series_name = request.args.get("series_name")
     frequency = request.args.get("frequency", "d")
 
     observations = await fetch_fred_data(series_id, frequency)
     if not observations:
         return Response("# No data available\n", mimetype="text/plain")
 
-    try:
-        latest_observation = observations[0]
-        yield_value = float(latest_observation["value"])
-    # pylint: disable=bare-except
-    except:
-        latest_observation = observations[1]
-        yield_value = float(latest_observation["value"])
-
-    observation_date = latest_observation["date"]
-    metrics_data = (
-        f"# TYPE {series_name} gauge\n"
-        f'{series_name}{{date="{observation_date}"}} {yield_value}\n'
-    )
-
-    return Response(metrics_data, mimetype="text/plain")
+    metrics_data = []
+    for observation in observations:
+        try:
+            metrics_data.append(
+                {
+                    "timestamp": observation["date"],
+                    "value": float(observation["value"]),
+                }
+            )
+        # pylint: disable=bare-except
+        except:
+            logger.error(
+                "Failed to get observation for series_id: %s, date: %s, value: %s",
+                series_id,
+                observation["date"],
+                observation["value"]
+            )
+    return jsonify(metrics_data)
 
 
 if __name__ == "__main__":

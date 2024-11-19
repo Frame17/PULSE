@@ -1,16 +1,6 @@
 version: '3.8'
 
 services:
-  prometheus:
-    image: prom/prometheus:latest
-    container_name: prometheus
-    ports:
-      - "9090:9090"
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    depends_on:
-      - pulse
-
   grafana:
     image: grafana/grafana-oss:latest
     container_name: grafana
@@ -20,8 +10,6 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     volumes:
       - grafana-data:/var/lib/grafana
-    depends_on:
-      - prometheus
 
   pulse:
     build:

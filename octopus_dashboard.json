@@ -36,8 +36,8 @@
         },
         {
             "datasource": {
-                "type": "prometheus",
-                "uid": "fe4bm3ym6d05cf"
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "fe4ehk2sno6wwf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -116,15 +116,45 @@
             "pluginVersion": "11.3.0",
             "targets": [
                 {
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "gdp_growth_rate",
-                    "fullMetaSearch": false,
-                    "includeNullMetadata": true,
-                    "legendFormat": "__auto",
-                    "range": true,
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "parser": "backend",
                     "refId": "A",
-                    "useBackend": false
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "GDPC1"
+                            },
+                            {
+                                "key": "frequency",
+                                "value": "q"
+                            }
+                        ]
+                    }
                 }
             ],
             "title": "GDP Growth Rate",
@@ -145,8 +175,8 @@
         },
         {
             "datasource": {
-                "type": "prometheus",
-                "uid": "fe4bm3ym6d05cf"
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "fe4ehk2sno6wwf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -225,32 +255,79 @@
             "pluginVersion": "11.3.0",
             "targets": [
                 {
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "us_bond_yield_10year_curve",
-                    "fullMetaSearch": false,
-                    "includeNullMetadata": true,
-                    "legendFormat": "__auto",
-                    "range": true,
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "us_bond_yield_2year",
+                            "type": "number"
+                        }
+                    ],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "parser": "backend",
                     "refId": "A",
-                    "useBackend": false
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "DGS2"
+                            }
+                        ]
+                    }
                 },
                 {
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "us_bond_yield_10year",
+                            "type": "number"
+                        }
+                    ],
                     "datasource": {
-                        "type": "prometheus",
-                        "uid": "fe4bm3ym6d05cf"
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
                     },
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "us_bond_yield_2year",
-                    "fullMetaSearch": false,
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
                     "hide": false,
-                    "includeNullMetadata": true,
-                    "instant": false,
-                    "legendFormat": "__auto",
-                    "range": true,
+                    "parser": "backend",
                     "refId": "B",
-                    "useBackend": false
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "DGS10"
+                            }
+                        ]
+                    }
                 }
             ],
             "title": "Treasury Constant Maturity Rate",
@@ -258,8 +335,8 @@
         },
         {
             "datasource": {
-                "type": "prometheus",
-                "uid": "fe4bm3ym6d05cf"
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "fe4ehk2sno6wwf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -338,24 +415,55 @@
             "pluginVersion": "11.3.0",
             "targets": [
                 {
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "yield_curve_spread",
-                    "fullMetaSearch": false,
-                    "includeNullMetadata": true,
-                    "legendFormat": "__auto",
-                    "range": true,
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "parser": "backend",
                     "refId": "A",
-                    "useBackend": false
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "headers": [],
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "T10Y2Y"
+                            },
+                            {
+                                "key": "key",
+                                "value": "value"
+                            }
+                        ]
+                    }
                 }
             ],
-            "title": "Interest Rates and Yield Curves",
+            "title": "Yield Curve Spread (10-Year Minus 2-Year)",
             "type": "timeseries"
         },
         {
             "datasource": {
-                "type": "prometheus",
-                "uid": "fe4bm3ym6d05cf"
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "fe4ehk2sno6wwf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -434,15 +542,41 @@
             "pluginVersion": "11.3.0",
             "targets": [
                 {
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "federal_funds_rate",
-                    "fullMetaSearch": false,
-                    "includeNullMetadata": true,
-                    "legendFormat": "__auto",
-                    "range": true,
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "parser": "backend",
                     "refId": "A",
-                    "useBackend": false
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "DFF"
+                            }
+                        ]
+                    }
                 }
             ],
             "title": "Federal Funds Rate",
@@ -463,8 +597,8 @@
         },
         {
             "datasource": {
-                "type": "prometheus",
-                "uid": "fe4bm3ym6d05cf"
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "fe4ehk2sno6wwf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -543,15 +677,41 @@
             "pluginVersion": "11.3.0",
             "targets": [
                 {
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "sp500_index",
-                    "fullMetaSearch": false,
-                    "includeNullMetadata": true,
-                    "legendFormat": "__auto",
-                    "range": true,
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "parser": "backend",
                     "refId": "A",
-                    "useBackend": false
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "SP500"
+                            }
+                        ]
+                    }
                 }
             ],
             "title": "S&P 500 Index",
@@ -559,8 +719,8 @@
         },
         {
             "datasource": {
-                "type": "prometheus",
-                "uid": "fe4bm3ym6d05cf"
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "fe4ehk2sno6wwf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -639,15 +799,41 @@
             "pluginVersion": "11.3.0",
             "targets": [
                 {
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "vix_index",
-                    "fullMetaSearch": false,
-                    "includeNullMetadata": true,
-                    "legendFormat": "__auto",
-                    "range": true,
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "parser": "backend",
                     "refId": "A",
-                    "useBackend": false
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "VIXCLS"
+                            }
+                        ]
+                    }
                 }
             ],
             "title": "VIX Index (Volatility Index)",
@@ -668,8 +854,8 @@
         },
         {
             "datasource": {
-                "type": "prometheus",
-                "uid": "fe4bm3ym6d05cf"
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "fe4ehk2sno6wwf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -748,15 +934,41 @@
             "pluginVersion": "11.3.0",
             "targets": [
                 {
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "usdollar_index",
-                    "fullMetaSearch": false,
-                    "includeNullMetadata": true,
-                    "legendFormat": "__auto",
-                    "range": true,
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "parser": "backend",
                     "refId": "A",
-                    "useBackend": false
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "DTWEXBGS"
+                            }
+                        ]
+                    }
                 }
             ],
             "title": "U.S. Dollar Index",
@@ -764,8 +976,8 @@
         },
         {
             "datasource": {
-                "type": "prometheus",
-                "uid": "fe4bm3ym6d05cf"
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "fe4ehk2sno6wwf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -844,15 +1056,45 @@
             "pluginVersion": "11.3.0",
             "targets": [
                 {
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "euro_area_unemployment_rate",
-                    "fullMetaSearch": false,
-                    "includeNullMetadata": true,
-                    "legendFormat": "__auto",
-                    "range": true,
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "parser": "backend",
                     "refId": "A",
-                    "useBackend": false
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "LRHUTTTTEZQ156S"
+                            },
+                            {
+                                "key": "frequency",
+                                "value": "q"
+                            }
+                        ]
+                    }
                 }
             ],
             "title": "Euro Area Unemployment Rate",
@@ -873,8 +1115,8 @@
         },
         {
             "datasource": {
-                "type": "prometheus",
-                "uid": "fe4bm3ym6d05cf"
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "fe4ehk2sno6wwf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -953,467 +1195,48 @@
             "pluginVersion": "11.3.0",
             "targets": [
                 {
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "consumer_price_index",
-                    "fullMetaSearch": false,
-                    "includeNullMetadata": true,
-                    "legendFormat": "__auto",
-                    "range": true,
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "parser": "backend",
                     "refId": "A",
-                    "useBackend": false
-                },
-                {
-                    "datasource": {
-                        "type": "prometheus",
-                        "uid": "fe4bm3ym6d05cf"
-                    },
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "core_cpi",
-                    "fullMetaSearch": false,
-                    "hide": false,
-                    "includeNullMetadata": true,
-                    "instant": false,
-                    "legendFormat": "__auto",
-                    "range": true,
-                    "refId": "B",
-                    "useBackend": false
-                },
-                {
-                    "datasource": {
-                        "type": "prometheus",
-                        "uid": "fe4bm3ym6d05cf"
-                    },
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "producer_price_index",
-                    "fullMetaSearch": false,
-                    "hide": false,
-                    "includeNullMetadata": true,
-                    "instant": false,
-                    "legendFormat": "__auto",
-                    "range": true,
-                    "refId": "C",
-                    "useBackend": false
-                },
-                {
-                    "datasource": {
-                        "type": "prometheus",
-                        "uid": "fe4bm3ym6d05cf"
-                    },
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "pce_price_index",
-                    "fullMetaSearch": false,
-                    "hide": false,
-                    "includeNullMetadata": true,
-                    "instant": false,
-                    "legendFormat": "__auto",
-                    "range": true,
-                    "refId": "D",
-                    "useBackend": false
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "CPIAUCSL"
+                            },
+                            {
+                                "key": "frequency",
+                                "value": "q"
+                            }
+                        ]
+                    }
                 }
             ],
             "title": "Consumer Price Index (CPI)",
-            "type": "timeseries"
-        },
-        {
-            "collapsed": false,
-            "gridPos": {
-                "h": 1,
-                "w": 24,
-                "x": 0,
-                "y": 53
-            },
-            "id": 11,
-            "panels": [],
-            "title": "Labor Market Indicators",
-            "type": "row"
-        },
-        {
-            "datasource": {
-                "type": "prometheus",
-                "uid": "fe4bm3ym6d05cf"
-            },
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "mode": "palette-classic"
-                    },
-                    "custom": {
-                        "axisBorderShow": false,
-                        "axisCenteredZero": false,
-                        "axisColorMode": "text",
-                        "axisLabel": "",
-                        "axisPlacement": "auto",
-                        "barAlignment": 0,
-                        "barWidthFactor": 0.6,
-                        "drawStyle": "line",
-                        "fillOpacity": 0,
-                        "gradientMode": "none",
-                        "hideFrom": {
-                            "legend": false,
-                            "tooltip": false,
-                            "viz": false
-                        },
-                        "insertNulls": false,
-                        "lineInterpolation": "linear",
-                        "lineWidth": 1,
-                        "pointSize": 5,
-                        "scaleDistribution": {
-                            "type": "linear"
-                        },
-                        "showPoints": "auto",
-                        "spanNulls": false,
-                        "stacking": {
-                            "group": "A",
-                            "mode": "none"
-                        },
-                        "thresholdsStyle": {
-                            "mode": "off"
-                        }
-                    },
-                    "mappings": [],
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [
-                            {
-                                "color": "green",
-                                "value": null
-                            },
-                            {
-                                "color": "red",
-                                "value": 80
-                            }
-                        ]
-                    }
-                },
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 8,
-                "w": 12,
-                "x": 0,
-                "y": 54
-            },
-            "id": 7,
-            "options": {
-                "legend": {
-                    "calcs": [],
-                    "displayMode": "list",
-                    "placement": "bottom",
-                    "showLegend": true
-                },
-                "tooltip": {
-                    "mode": "single",
-                    "sort": "none"
-                }
-            },
-            "pluginVersion": "11.3.0",
-            "targets": [
-                {
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "unemployment_rate",
-                    "fullMetaSearch": false,
-                    "includeNullMetadata": true,
-                    "legendFormat": "__auto",
-                    "range": true,
-                    "refId": "A",
-                    "useBackend": false
-                }
-            ],
-            "title": "Unemployment Rate",
-            "type": "timeseries"
-        },
-        {
-            "datasource": {
-                "type": "prometheus",
-                "uid": "fe4bm3ym6d05cf"
-            },
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "mode": "palette-classic"
-                    },
-                    "custom": {
-                        "axisBorderShow": false,
-                        "axisCenteredZero": false,
-                        "axisColorMode": "text",
-                        "axisLabel": "",
-                        "axisPlacement": "auto",
-                        "barAlignment": 0,
-                        "barWidthFactor": 0.6,
-                        "drawStyle": "line",
-                        "fillOpacity": 0,
-                        "gradientMode": "none",
-                        "hideFrom": {
-                            "legend": false,
-                            "tooltip": false,
-                            "viz": false
-                        },
-                        "insertNulls": false,
-                        "lineInterpolation": "linear",
-                        "lineWidth": 1,
-                        "pointSize": 5,
-                        "scaleDistribution": {
-                            "type": "linear"
-                        },
-                        "showPoints": "auto",
-                        "spanNulls": false,
-                        "stacking": {
-                            "group": "A",
-                            "mode": "none"
-                        },
-                        "thresholdsStyle": {
-                            "mode": "off"
-                        }
-                    },
-                    "mappings": [],
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [
-                            {
-                                "color": "green",
-                                "value": null
-                            },
-                            {
-                                "color": "red",
-                                "value": 80
-                            }
-                        ]
-                    }
-                },
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 8,
-                "w": 12,
-                "x": 12,
-                "y": 54
-            },
-            "id": 8,
-            "options": {
-                "legend": {
-                    "calcs": [],
-                    "displayMode": "list",
-                    "placement": "bottom",
-                    "showLegend": true
-                },
-                "tooltip": {
-                    "mode": "single",
-                    "sort": "none"
-                }
-            },
-            "pluginVersion": "11.3.0",
-            "targets": [
-                {
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "nonfarm_payrolls",
-                    "fullMetaSearch": false,
-                    "includeNullMetadata": true,
-                    "legendFormat": "__auto",
-                    "range": true,
-                    "refId": "A",
-                    "useBackend": false
-                }
-            ],
-            "title": "Nonfarm Payrolls",
-            "type": "timeseries"
-        },
-        {
-            "datasource": {
-                "type": "prometheus",
-                "uid": "fe4bm3ym6d05cf"
-            },
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "mode": "palette-classic"
-                    },
-                    "custom": {
-                        "axisBorderShow": false,
-                        "axisCenteredZero": false,
-                        "axisColorMode": "text",
-                        "axisLabel": "",
-                        "axisPlacement": "auto",
-                        "barAlignment": 0,
-                        "barWidthFactor": 0.6,
-                        "drawStyle": "line",
-                        "fillOpacity": 0,
-                        "gradientMode": "none",
-                        "hideFrom": {
-                            "legend": false,
-                            "tooltip": false,
-                            "viz": false
-                        },
-                        "insertNulls": false,
-                        "lineInterpolation": "linear",
-                        "lineWidth": 1,
-                        "pointSize": 5,
-                        "scaleDistribution": {
-                            "type": "linear"
-                        },
-                        "showPoints": "auto",
-                        "spanNulls": false,
-                        "stacking": {
-                            "group": "A",
-                            "mode": "none"
-                        },
-                        "thresholdsStyle": {
-                            "mode": "off"
-                        }
-                    },
-                    "mappings": [],
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [
-                            {
-                                "color": "green",
-                                "value": null
-                            },
-                            {
-                                "color": "red",
-                                "value": 80
-                            }
-                        ]
-                    }
-                },
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 8,
-                "w": 12,
-                "x": 0,
-                "y": 62
-            },
-            "id": 9,
-            "options": {
-                "legend": {
-                    "calcs": [],
-                    "displayMode": "list",
-                    "placement": "bottom",
-                    "showLegend": true
-                },
-                "tooltip": {
-                    "mode": "single",
-                    "sort": "none"
-                }
-            },
-            "pluginVersion": "11.3.0",
-            "targets": [
-                {
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "expr": "labor_force_participation_rate",
-                    "fullMetaSearch": false,
-                    "includeNullMetadata": true,
-                    "legendFormat": "__auto",
-                    "range": true,
-                    "refId": "A",
-                    "useBackend": false
-                }
-            ],
-            "title": "Labor Force Participation Rate",
-            "type": "timeseries"
-        },
-        {
-            "datasource": {
-                "type": "prometheus",
-                "uid": "fe4bm3ym6d05cf"
-            },
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "mode": "palette-classic"
-                    },
-                    "custom": {
-                        "axisBorderShow": false,
-                        "axisCenteredZero": false,
-                        "axisColorMode": "text",
-                        "axisLabel": "",
-                        "axisPlacement": "auto",
-                        "barAlignment": 0,
-                        "barWidthFactor": 0.6,
-                        "drawStyle": "line",
-                        "fillOpacity": 0,
-                        "gradientMode": "none",
-                        "hideFrom": {
-                            "legend": false,
-                            "tooltip": false,
-                            "viz": false
-                        },
-                        "insertNulls": false,
-                        "lineInterpolation": "linear",
-                        "lineWidth": 1,
-                        "pointSize": 5,
-                        "scaleDistribution": {
-                            "type": "linear"
-                        },
-                        "showPoints": "auto",
-                        "spanNulls": false,
-                        "stacking": {
-                            "group": "A",
-                            "mode": "none"
-                        },
-                        "thresholdsStyle": {
-                            "mode": "off"
-                        }
-                    },
-                    "mappings": [],
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [
-                            {
-                                "color": "green",
-                                "value": null
-                            },
-                            {
-                                "color": "red",
-                                "value": 80
-                            }
-                        ]
-                    }
-                },
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 8,
-                "w": 12,
-                "x": 12,
-                "y": 62
-            },
-            "id": 10,
-            "options": {
-                "legend": {
-                    "calcs": [],
-                    "displayMode": "list",
-                    "placement": "bottom",
-                    "showLegend": true
-                },
-                "tooltip": {
-                    "mode": "single",
-                    "sort": "none"
-                }
-            },
-            "pluginVersion": "11.3.0",
-            "targets": [
-                {
-                    "disableTextWrap": false,
-                    "editorMode": "builder",
-                    "exemplar": false,
-                    "expr": "average_hourly_earnings",
-                    "fullMetaSearch": false,
-                    "includeNullMetadata": true,
-                    "legendFormat": "",
-                    "range": true,
-                    "refId": "A",
-                    "useBackend": false
-                }
-            ],
-            "title": "Average Hourly Earnings",
             "type": "timeseries"
         },
         {
@@ -1422,14 +1245,14 @@
                 "h": 1,
                 "w": 24,
                 "x": 0,
-                "y": 70
+                "y": 53
             },
-            "id": 24,
+            "id": 11,
             "panels": [
                 {
                     "datasource": {
-                        "type": "prometheus",
-                        "uid": "fe4bm3ym6d05cf"
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
                     },
                     "fieldConfig": {
                         "defaults": {
@@ -1490,7 +1313,525 @@
                         "h": 8,
                         "w": 12,
                         "x": 0,
-                        "y": 159
+                        "y": 54
+                    },
+                    "id": 7,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "tooltip": {
+                            "mode": "single",
+                            "sort": "none"
+                        }
+                    },
+                    "pluginVersion": "11.3.0",
+                    "targets": [
+                        {
+                            "columns": [
+                                {
+                                    "selector": "timestamp",
+                                    "text": "",
+                                    "type": "timestamp"
+                                },
+                                {
+                                    "selector": "value",
+                                    "text": "",
+                                    "type": "number"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "yesoreyeram-infinity-datasource",
+                                "uid": "fe4ehk2sno6wwf"
+                            },
+                            "filters": [],
+                            "format": "table",
+                            "global_query_id": "",
+                            "parser": "backend",
+                            "refId": "A",
+                            "root_selector": "",
+                            "source": "url",
+                            "type": "json",
+                            "url": "pulse",
+                            "url_options": {
+                                "data": "",
+                                "method": "GET",
+                                "params": [
+                                    {
+                                        "key": "series_id",
+                                        "value": "UNRATE"
+                                    },
+                                    {
+                                        "key": "frequency",
+                                        "value": "q"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "title": "Unemployment Rate",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": false,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "text",
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 0.6,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 54
+                    },
+                    "id": 8,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "tooltip": {
+                            "mode": "single",
+                            "sort": "none"
+                        }
+                    },
+                    "pluginVersion": "11.3.0",
+                    "targets": [
+                        {
+                            "columns": [
+                                {
+                                    "selector": "timestamp",
+                                    "text": "",
+                                    "type": "timestamp"
+                                },
+                                {
+                                    "selector": "value",
+                                    "text": "",
+                                    "type": "number"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "yesoreyeram-infinity-datasource",
+                                "uid": "fe4ehk2sno6wwf"
+                            },
+                            "filters": [],
+                            "format": "table",
+                            "global_query_id": "",
+                            "parser": "backend",
+                            "refId": "A",
+                            "root_selector": "",
+                            "source": "url",
+                            "type": "json",
+                            "url": "pulse",
+                            "url_options": {
+                                "data": "",
+                                "method": "GET",
+                                "params": [
+                                    {
+                                        "key": "series_id",
+                                        "value": "PAYEMS"
+                                    },
+                                    {
+                                        "key": "frequency",
+                                        "value": "q"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "title": "Nonfarm Payrolls",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": false,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "text",
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 0.6,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 62
+                    },
+                    "id": 9,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "tooltip": {
+                            "mode": "single",
+                            "sort": "none"
+                        }
+                    },
+                    "pluginVersion": "11.3.0",
+                    "targets": [
+                        {
+                            "columns": [
+                                {
+                                    "selector": "timestamp",
+                                    "text": "",
+                                    "type": "timestamp"
+                                },
+                                {
+                                    "selector": "value",
+                                    "text": "",
+                                    "type": "number"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "yesoreyeram-infinity-datasource",
+                                "uid": "fe4ehk2sno6wwf"
+                            },
+                            "filters": [],
+                            "format": "table",
+                            "global_query_id": "",
+                            "parser": "backend",
+                            "refId": "A",
+                            "root_selector": "",
+                            "source": "url",
+                            "type": "json",
+                            "url": "pulse",
+                            "url_options": {
+                                "data": "",
+                                "method": "GET",
+                                "params": [
+                                    {
+                                        "key": "series_id",
+                                        "value": "CIVPART"
+                                    },
+                                    {
+                                        "key": "frequency",
+                                        "value": "q"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "title": "Labor Force Participation Rate",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": false,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "text",
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 0.6,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 62
+                    },
+                    "id": 10,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "tooltip": {
+                            "mode": "single",
+                            "sort": "none"
+                        }
+                    },
+                    "pluginVersion": "11.3.0",
+                    "targets": [
+                        {
+                            "columns": [
+                                {
+                                    "selector": "timestamp",
+                                    "text": "",
+                                    "type": "timestamp"
+                                },
+                                {
+                                    "selector": "value",
+                                    "text": "",
+                                    "type": "number"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "yesoreyeram-infinity-datasource",
+                                "uid": "fe4ehk2sno6wwf"
+                            },
+                            "filters": [],
+                            "format": "table",
+                            "global_query_id": "",
+                            "parser": "backend",
+                            "refId": "A",
+                            "root_selector": "",
+                            "source": "url",
+                            "type": "json",
+                            "url": "pulse",
+                            "url_options": {
+                                "data": "",
+                                "method": "GET",
+                                "params": [
+                                    {
+                                        "key": "series_id",
+                                        "value": "CES0500000003"
+                                    },
+                                    {
+                                        "key": "frequency",
+                                        "value": "q"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "title": "Average Hourly Earnings",
+                    "type": "timeseries"
+                }
+            ],
+            "title": "Labor Market Indicators",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 54
+            },
+            "id": 24,
+            "panels": [
+                {
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": false,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "text",
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 0.6,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 71
                     },
                     "id": 25,
                     "options": {
@@ -1508,15 +1849,45 @@
                     "pluginVersion": "11.3.0",
                     "targets": [
                         {
-                            "disableTextWrap": false,
-                            "editorMode": "builder",
-                            "expr": "m2_money_supply",
-                            "fullMetaSearch": false,
-                            "includeNullMetadata": true,
-                            "legendFormat": "__auto",
-                            "range": true,
+                            "columns": [
+                                {
+                                    "selector": "timestamp",
+                                    "text": "",
+                                    "type": "timestamp"
+                                },
+                                {
+                                    "selector": "value",
+                                    "text": "",
+                                    "type": "number"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "yesoreyeram-infinity-datasource",
+                                "uid": "fe4ehk2sno6wwf"
+                            },
+                            "filters": [],
+                            "format": "table",
+                            "global_query_id": "",
+                            "parser": "backend",
                             "refId": "A",
-                            "useBackend": false
+                            "root_selector": "",
+                            "source": "url",
+                            "type": "json",
+                            "url": "pulse",
+                            "url_options": {
+                                "data": "",
+                                "method": "GET",
+                                "params": [
+                                    {
+                                        "key": "series_id",
+                                        "value": "M2SL"
+                                    },
+                                    {
+                                        "key": "frequency",
+                                        "value": "q"
+                                    }
+                                ]
+                            }
                         }
                     ],
                     "title": "M2 Money Supply",
@@ -1524,8 +1895,8 @@
                 },
                 {
                     "datasource": {
-                        "type": "prometheus",
-                        "uid": "fe4bm3ym6d05cf"
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
                     },
                     "fieldConfig": {
                         "defaults": {
@@ -1586,7 +1957,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 12,
-                        "y": 159
+                        "y": 71
                     },
                     "id": 26,
                     "options": {
@@ -1604,15 +1975,45 @@
                     "pluginVersion": "11.3.0",
                     "targets": [
                         {
-                            "disableTextWrap": false,
-                            "editorMode": "builder",
-                            "expr": "fed_total_assets",
-                            "fullMetaSearch": false,
-                            "includeNullMetadata": true,
-                            "legendFormat": "__auto",
-                            "range": true,
+                            "columns": [
+                                {
+                                    "selector": "timestamp",
+                                    "text": "",
+                                    "type": "timestamp"
+                                },
+                                {
+                                    "selector": "value",
+                                    "text": "",
+                                    "type": "number"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "yesoreyeram-infinity-datasource",
+                                "uid": "fe4ehk2sno6wwf"
+                            },
+                            "filters": [],
+                            "format": "table",
+                            "global_query_id": "",
+                            "parser": "backend",
                             "refId": "A",
-                            "useBackend": false
+                            "root_selector": "",
+                            "source": "url",
+                            "type": "json",
+                            "url": "pulse",
+                            "url_options": {
+                                "data": "",
+                                "method": "GET",
+                                "params": [
+                                    {
+                                        "key": "series_id",
+                                        "value": "WALCL"
+                                    },
+                                    {
+                                        "key": "frequency",
+                                        "value": "q"
+                                    }
+                                ]
+                            }
                         }
                     ],
                     "title": "Total Assets of the Federal Reserve",
@@ -1628,14 +2029,14 @@
                 "h": 1,
                 "w": 24,
                 "x": 0,
-                "y": 71
+                "y": 55
             },
             "id": 20,
             "panels": [
                 {
                     "datasource": {
-                        "type": "prometheus",
-                        "uid": "fe4bm3ym6d05cf"
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
                     },
                     "fieldConfig": {
                         "defaults": {
@@ -1696,7 +2097,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 0,
-                        "y": 321
+                        "y": 80
                     },
                     "id": 21,
                     "options": {
@@ -1714,15 +2115,45 @@
                     "pluginVersion": "11.3.0",
                     "targets": [
                         {
-                            "disableTextWrap": false,
-                            "editorMode": "builder",
-                            "expr": "new_residential_construction",
-                            "fullMetaSearch": false,
-                            "includeNullMetadata": true,
-                            "legendFormat": "__auto",
-                            "range": true,
+                            "columns": [
+                                {
+                                    "selector": "timestamp",
+                                    "text": "",
+                                    "type": "timestamp"
+                                },
+                                {
+                                    "selector": "value",
+                                    "text": "",
+                                    "type": "number"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "yesoreyeram-infinity-datasource",
+                                "uid": "fe4ehk2sno6wwf"
+                            },
+                            "filters": [],
+                            "format": "table",
+                            "global_query_id": "",
+                            "parser": "backend",
                             "refId": "A",
-                            "useBackend": false
+                            "root_selector": "",
+                            "source": "url",
+                            "type": "json",
+                            "url": "pulse",
+                            "url_options": {
+                                "data": "",
+                                "method": "GET",
+                                "params": [
+                                    {
+                                        "key": "series_id",
+                                        "value": "HOUST"
+                                    },
+                                    {
+                                        "key": "frequency",
+                                        "value": "q"
+                                    }
+                                ]
+                            }
                         }
                     ],
                     "title": "New Residential Construction (Housing Starts)",
@@ -1730,8 +2161,8 @@
                 },
                 {
                     "datasource": {
-                        "type": "prometheus",
-                        "uid": "fe4bm3ym6d05cf"
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
                     },
                     "fieldConfig": {
                         "defaults": {
@@ -1792,7 +2223,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 12,
-                        "y": 321
+                        "y": 80
                     },
                     "id": 22,
                     "options": {
@@ -1810,15 +2241,45 @@
                     "pluginVersion": "11.3.0",
                     "targets": [
                         {
-                            "disableTextWrap": false,
-                            "editorMode": "builder",
-                            "expr": "case_shiller_home_price_index",
-                            "fullMetaSearch": false,
-                            "includeNullMetadata": true,
-                            "legendFormat": "__auto",
-                            "range": true,
+                            "columns": [
+                                {
+                                    "selector": "timestamp",
+                                    "text": "",
+                                    "type": "timestamp"
+                                },
+                                {
+                                    "selector": "value",
+                                    "text": "",
+                                    "type": "number"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "yesoreyeram-infinity-datasource",
+                                "uid": "fe4ehk2sno6wwf"
+                            },
+                            "filters": [],
+                            "format": "table",
+                            "global_query_id": "",
+                            "parser": "backend",
                             "refId": "A",
-                            "useBackend": false
+                            "root_selector": "",
+                            "source": "url",
+                            "type": "json",
+                            "url": "pulse",
+                            "url_options": {
+                                "data": "",
+                                "method": "GET",
+                                "params": [
+                                    {
+                                        "key": "series_id",
+                                        "value": "CSUSHPINSA"
+                                    },
+                                    {
+                                        "key": "frequency",
+                                        "value": "q"
+                                    }
+                                ]
+                            }
                         }
                     ],
                     "title": "S&P/Case-Shiller U.S. National Home Price Index",
@@ -1826,8 +2287,8 @@
                 },
                 {
                     "datasource": {
-                        "type": "prometheus",
-                        "uid": "fe4bm3ym6d05cf"
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
                     },
                     "fieldConfig": {
                         "defaults": {
@@ -1888,7 +2349,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 0,
-                        "y": 329
+                        "y": 88
                     },
                     "id": 23,
                     "options": {
@@ -1906,15 +2367,45 @@
                     "pluginVersion": "11.3.0",
                     "targets": [
                         {
-                            "disableTextWrap": false,
-                            "editorMode": "builder",
-                            "expr": "mortgage_rate_30year",
-                            "fullMetaSearch": false,
-                            "includeNullMetadata": true,
-                            "legendFormat": "__auto",
-                            "range": true,
+                            "columns": [
+                                {
+                                    "selector": "timestamp",
+                                    "text": "",
+                                    "type": "timestamp"
+                                },
+                                {
+                                    "selector": "value",
+                                    "text": "",
+                                    "type": "number"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "yesoreyeram-infinity-datasource",
+                                "uid": "fe4ehk2sno6wwf"
+                            },
+                            "filters": [],
+                            "format": "table",
+                            "global_query_id": "",
+                            "parser": "backend",
                             "refId": "A",
-                            "useBackend": false
+                            "root_selector": "",
+                            "source": "url",
+                            "type": "json",
+                            "url": "pulse",
+                            "url_options": {
+                                "data": "",
+                                "method": "GET",
+                                "params": [
+                                    {
+                                        "key": "series_id",
+                                        "value": "MORTGAGE30US"
+                                    },
+                                    {
+                                        "key": "frequency",
+                                        "value": "q"
+                                    }
+                                ]
+                            }
                         }
                     ],
                     "title": "30-Year Fixed-Rate Mortgage Average",
@@ -1930,14 +2421,14 @@
                 "h": 1,
                 "w": 24,
                 "x": 0,
-                "y": 72
+                "y": 56
             },
             "id": 18,
             "panels": [
                 {
                     "datasource": {
-                        "type": "prometheus",
-                        "uid": "fe4bm3ym6d05cf"
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
                     },
                     "fieldConfig": {
                         "defaults": {
@@ -1998,7 +2489,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 0,
-                        "y": 161
+                        "y": 97
                     },
                     "id": 19,
                     "options": {
@@ -2016,15 +2507,45 @@
                     "pluginVersion": "11.3.0",
                     "targets": [
                         {
-                            "disableTextWrap": false,
-                            "editorMode": "builder",
-                            "expr": "consumer_sentiment_index",
-                            "fullMetaSearch": false,
-                            "includeNullMetadata": true,
-                            "legendFormat": "__auto",
-                            "range": true,
+                            "columns": [
+                                {
+                                    "selector": "timestamp",
+                                    "text": "",
+                                    "type": "timestamp"
+                                },
+                                {
+                                    "selector": "value",
+                                    "text": "",
+                                    "type": "number"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "yesoreyeram-infinity-datasource",
+                                "uid": "fe4ehk2sno6wwf"
+                            },
+                            "filters": [],
+                            "format": "table",
+                            "global_query_id": "",
+                            "parser": "backend",
                             "refId": "A",
-                            "useBackend": false
+                            "root_selector": "",
+                            "source": "url",
+                            "type": "json",
+                            "url": "pulse",
+                            "url_options": {
+                                "data": "",
+                                "method": "GET",
+                                "params": [
+                                    {
+                                        "key": "series_id",
+                                        "value": "UMCSENT"
+                                    },
+                                    {
+                                        "key": "frequency",
+                                        "value": "q"
+                                    }
+                                ]
+                            }
                         }
                     ],
                     "title": "Consumer Sentiment Index (University of Michigan)",
@@ -2036,20 +2557,20 @@
         }
     ],
     "preload": false,
-    "refresh": "1m",
+    "refresh": "1d",
     "schemaVersion": 40,
     "tags": [],
     "templating": {
         "list": []
     },
     "time": {
-        "from": "now-30m",
-        "to": "now"
+        "from": "1962-01-02T00:00:00.000Z",
+        "to": "2024-11-15T00:00:00.000Z"
     },
     "timepicker": {},
     "timezone": "browser",
     "title": "PULSE",
     "uid": "de4bml1zywbggd",
-    "version": 10,
+    "version": 14,
     "weekStart": ""
 }
