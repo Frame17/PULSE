@@ -37,7 +37,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "fe4ehk2sno6wwf"
+                "uid": "ae4jc0j1a2qdcf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -157,7 +157,149 @@
                     }
                 }
             ],
-            "title": "GDP Growth Rate",
+            "title": "US GDP Growth Rate",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "ae4jc0j1a2qdcf"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 1
+            },
+            "id": 33,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.3.0",
+            "targets": [
+                {
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "parser": "backend",
+                    "refId": "A",
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "NAMA_10_GDP"
+                            },
+                            {
+                                "key": "frequency",
+                                "value": "A"
+                            },
+                            {
+                                "key": "provider",
+                                "value": "eurostat"
+                            },
+                            {
+                                "key": "unit",
+                                "value": "CP_MEUR"
+                            },
+                            {
+                                "key": "coicop",
+                                "value": "B1GQ"
+                            },
+                            {
+                                "key": "location",
+                                "value": "DE"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "title": "DE GDP Growth Rate",
             "type": "timeseries"
         },
         {
@@ -176,7 +318,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "fe4ehk2sno6wwf"
+                "uid": "ae4jc0j1a2qdcf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -330,13 +472,13 @@
                     }
                 }
             ],
-            "title": "Treasury Constant Maturity Rate",
+            "title": "US Treasury Constant Maturity Rate",
             "type": "timeseries"
         },
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "fe4ehk2sno6wwf"
+                "uid": "ae4jc0j1a2qdcf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -457,13 +599,13 @@
                     }
                 }
             ],
-            "title": "Yield Curve Spread (10-Year Minus 2-Year)",
+            "title": "US Yield Curve Spread (10-Year Minus 2-Year)",
             "type": "timeseries"
         },
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "fe4ehk2sno6wwf"
+                "uid": "ae4jc0j1a2qdcf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -579,26 +721,13 @@
                     }
                 }
             ],
-            "title": "Federal Funds Rate",
+            "title": "US Federal Funds Rate",
             "type": "timeseries"
-        },
-        {
-            "collapsed": false,
-            "gridPos": {
-                "h": 1,
-                "w": 24,
-                "x": 0,
-                "y": 26
-            },
-            "id": 31,
-            "panels": [],
-            "title": "Market Indicators",
-            "type": "row"
         },
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "fe4ehk2sno6wwf"
+                "uid": "ae4jc0j1a2qdcf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -659,7 +788,180 @@
                 "h": 8,
                 "w": 12,
                 "x": 0,
-                "y": 27
+                "y": 26
+            },
+            "id": 34,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.3.0",
+            "targets": [
+                {
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "us_bond_yield_2year",
+                            "type": "number"
+                        }
+                    ],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "parser": "backend",
+                    "refId": "A",
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "DGS2"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "us_bond_yield_10year",
+                            "type": "number"
+                        }
+                    ],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "hide": false,
+                    "parser": "backend",
+                    "refId": "B",
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "DGS10"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "title": "US Treasury Constant Maturity Rate",
+            "type": "timeseries"
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 34
+            },
+            "id": 31,
+            "panels": [],
+            "title": "Market Indicators",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "ae4jc0j1a2qdcf"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 35
             },
             "id": 30,
             "options": {
@@ -720,7 +1022,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "fe4ehk2sno6wwf"
+                "uid": "ae4jc0j1a2qdcf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -781,7 +1083,7 @@
                 "h": 8,
                 "w": 12,
                 "x": 12,
-                "y": 27
+                "y": 35
             },
             "id": 32,
             "options": {
@@ -845,7 +1147,7 @@
                 "h": 1,
                 "w": 24,
                 "x": 0,
-                "y": 35
+                "y": 43
             },
             "id": 28,
             "panels": [],
@@ -855,7 +1157,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "fe4ehk2sno6wwf"
+                "uid": "ae4jc0j1a2qdcf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -916,7 +1218,7 @@
                 "h": 8,
                 "w": 12,
                 "x": 0,
-                "y": 36
+                "y": 44
             },
             "id": 27,
             "options": {
@@ -977,7 +1279,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "fe4ehk2sno6wwf"
+                "uid": "ae4jc0j1a2qdcf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -1038,7 +1340,7 @@
                 "h": 8,
                 "w": 12,
                 "x": 12,
-                "y": 36
+                "y": 44
             },
             "id": 29,
             "options": {
@@ -1106,7 +1408,7 @@
                 "h": 1,
                 "w": 24,
                 "x": 0,
-                "y": 44
+                "y": 52
             },
             "id": 12,
             "panels": [],
@@ -1116,7 +1418,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "fe4ehk2sno6wwf"
+                "uid": "ae4jc0j1a2qdcf"
             },
             "fieldConfig": {
                 "defaults": {
@@ -1177,7 +1479,7 @@
                 "h": 8,
                 "w": 12,
                 "x": 0,
-                "y": 45
+                "y": 53
             },
             "id": 13,
             "options": {
@@ -1230,13 +1532,155 @@
                             },
                             {
                                 "key": "frequency",
-                                "value": "q"
+                                "value": "m"
                             }
                         ]
                     }
                 }
             ],
-            "title": "Consumer Price Index (CPI)",
+            "title": "US Consumer Price Index (CPI)",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "ae4jc0j1a2qdcf"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 53
+            },
+            "id": 35,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.3.0",
+            "targets": [
+                {
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "parser": "backend",
+                    "refId": "A",
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "prc_hicp_midx "
+                            },
+                            {
+                                "key": "frequency",
+                                "value": "m"
+                            },
+                            {
+                                "key": "provider",
+                                "value": "eurostat"
+                            },
+                            {
+                                "key": "unit",
+                                "value": "I15"
+                            },
+                            {
+                                "key": "coicop",
+                                "value": "CP00"
+                            },
+                            {
+                                "key": "location",
+                                "value": "DE"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "title": "DE Consumer Price Index (CPI)",
             "type": "timeseries"
         },
         {
@@ -1245,7 +1689,7 @@
                 "h": 1,
                 "w": 24,
                 "x": 0,
-                "y": 53
+                "y": 61
             },
             "id": 11,
             "panels": [
@@ -1297,8 +1741,7 @@
                                 "mode": "absolute",
                                 "steps": [
                                     {
-                                        "color": "green",
-                                        "value": null
+                                        "color": "green"
                                     },
                                     {
                                         "color": "red",
@@ -1313,7 +1756,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 0,
-                        "y": 54
+                        "y": 62
                     },
                     "id": 7,
                     "options": {
@@ -1423,8 +1866,7 @@
                                 "mode": "absolute",
                                 "steps": [
                                     {
-                                        "color": "green",
-                                        "value": null
+                                        "color": "green"
                                     },
                                     {
                                         "color": "red",
@@ -1439,7 +1881,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 12,
-                        "y": 54
+                        "y": 62
                     },
                     "id": 8,
                     "options": {
@@ -1549,8 +1991,7 @@
                                 "mode": "absolute",
                                 "steps": [
                                     {
-                                        "color": "green",
-                                        "value": null
+                                        "color": "green"
                                     },
                                     {
                                         "color": "red",
@@ -1565,7 +2006,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 0,
-                        "y": 62
+                        "y": 70
                     },
                     "id": 9,
                     "options": {
@@ -1675,8 +2116,7 @@
                                 "mode": "absolute",
                                 "steps": [
                                     {
-                                        "color": "green",
-                                        "value": null
+                                        "color": "green"
                                     },
                                     {
                                         "color": "red",
@@ -1691,7 +2131,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 12,
-                        "y": 62
+                        "y": 70
                     },
                     "id": 10,
                     "options": {
@@ -1763,7 +2203,7 @@
                 "h": 1,
                 "w": 24,
                 "x": 0,
-                "y": 54
+                "y": 62
             },
             "id": 24,
             "panels": [
@@ -1815,8 +2255,7 @@
                                 "mode": "absolute",
                                 "steps": [
                                     {
-                                        "color": "green",
-                                        "value": null
+                                        "color": "green"
                                     },
                                     {
                                         "color": "red",
@@ -1831,7 +2270,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 0,
-                        "y": 71
+                        "y": 79
                     },
                     "id": 25,
                     "options": {
@@ -1941,8 +2380,7 @@
                                 "mode": "absolute",
                                 "steps": [
                                     {
-                                        "color": "green",
-                                        "value": null
+                                        "color": "green"
                                     },
                                     {
                                         "color": "red",
@@ -1957,7 +2395,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 12,
-                        "y": 71
+                        "y": 79
                     },
                     "id": 26,
                     "options": {
@@ -2029,7 +2467,7 @@
                 "h": 1,
                 "w": 24,
                 "x": 0,
-                "y": 55
+                "y": 63
             },
             "id": 20,
             "panels": [
@@ -2081,8 +2519,7 @@
                                 "mode": "absolute",
                                 "steps": [
                                     {
-                                        "color": "green",
-                                        "value": null
+                                        "color": "green"
                                     },
                                     {
                                         "color": "red",
@@ -2097,7 +2534,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 0,
-                        "y": 80
+                        "y": 88
                     },
                     "id": 21,
                     "options": {
@@ -2207,8 +2644,7 @@
                                 "mode": "absolute",
                                 "steps": [
                                     {
-                                        "color": "green",
-                                        "value": null
+                                        "color": "green"
                                     },
                                     {
                                         "color": "red",
@@ -2223,7 +2659,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 12,
-                        "y": 80
+                        "y": 88
                     },
                     "id": 22,
                     "options": {
@@ -2333,8 +2769,7 @@
                                 "mode": "absolute",
                                 "steps": [
                                     {
-                                        "color": "green",
-                                        "value": null
+                                        "color": "green"
                                     },
                                     {
                                         "color": "red",
@@ -2349,7 +2784,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 0,
-                        "y": 88
+                        "y": 96
                     },
                     "id": 23,
                     "options": {
@@ -2421,7 +2856,7 @@
                 "h": 1,
                 "w": 24,
                 "x": 0,
-                "y": 56
+                "y": 64
             },
             "id": 18,
             "panels": [
@@ -2473,8 +2908,7 @@
                                 "mode": "absolute",
                                 "steps": [
                                     {
-                                        "color": "green",
-                                        "value": null
+                                        "color": "green"
                                     },
                                     {
                                         "color": "red",
@@ -2489,7 +2923,7 @@
                         "h": 8,
                         "w": 12,
                         "x": 0,
-                        "y": 97
+                        "y": 105
                     },
                     "id": 19,
                     "options": {
@@ -2564,13 +2998,13 @@
         "list": []
     },
     "time": {
-        "from": "1962-01-02T00:00:00.000Z",
-        "to": "2024-11-15T00:00:00.000Z"
+        "from": "now-5y",
+        "to": "now"
     },
     "timepicker": {},
     "timezone": "browser",
     "title": "PULSE",
     "uid": "de4bml1zywbggd",
-    "version": 14,
+    "version": 2,
     "weekStart": ""
 }
