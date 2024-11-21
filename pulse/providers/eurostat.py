@@ -4,6 +4,7 @@ import requests
 
 from pulse.providers.provider import DataProvider
 
+Q_MONTH_MAPPING: dict[str, str] = {"Q1": "01", "Q2": "04", "Q3": "07", "Q4": "10"}
 
 class Eurostat(DataProvider):
     def __init__(self):
@@ -27,6 +28,9 @@ class Eurostat(DataProvider):
         for key, value in values.items():
             try:
                 timestamp = time_labels[key]
+                if "Q" in timestamp:
+                    y, q = timestamp.split("-")
+                    timestamp = f"{y}-{Q_MONTH_MAPPING[q]}"
                 metrics_data.append({"timestamp": timestamp, "value": float(value)})
             # pylint: disable=bare-except
             except:
@@ -34,6 +38,6 @@ class Eurostat(DataProvider):
                     "Failed to get EUROSTAT observation for series_id: %s, date: %s, value: %s",
                     series_id,
                     timestamp,
-                    value[0],
+                    value,
                 )
         return metrics_data
