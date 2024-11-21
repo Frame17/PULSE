@@ -7,18 +7,14 @@ class DataProvider(ABC):
         self,
         series_id: str,
         frequency: str,
-        unit: str,
-        coicop: str,
-        location: str
+        filter_key: str
     ):
         """
         Fetch time series data from the provider for a given series ID and date range.
 
         :param series_id: Data series ID (e.g., 'GDP')
         :param frequency: Frequency of data series (e.g., 'q', 'a' or 'd')
-        :param unit: unit of measure
-        :param coicop: Classification of Individual Consumption by Purpose
-        :param location: country (e.g., 'DE')
+        :param filter_key: SDMX filter key (e.g., following the template [FREQ].[UNIT].[NA_ITEM].[GEO])
         :return: JSON data from the provider
         """
 

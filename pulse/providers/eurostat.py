@@ -11,18 +11,8 @@ class Eurostat(DataProvider):
         self.base_url = "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/{dataset_id}/{filter_key}?format=JSON"
         self.logger = logging.getLogger(__name__)
 
-    async def fetch_data(
-        self,
-        series_id: str,
-        frequency: str,
-        unit: str,
-        coicop: str,
-        location: str,
-    ):
-        filter_key = (
-            f"{frequency.upper()}.{unit.upper()}.{coicop.upper()}.{location.upper()}"
-        )
-        params = {"dataset_id": series_id.upper(), "filter_key": filter_key}
+    async def fetch_data(self, series_id: str, frequency: str, filter_key: str):
+        params = {"dataset_id": series_id.upper(), "filter_key": filter_key.upper()}
         response = requests.get(self.base_url.format(**params))
         return response.json()
 
@@ -35,6 +25,15 @@ class Eurostat(DataProvider):
 
         metrics_data = []
         for key, value in values.items():
-            timestamp = time_labels[key]
-            metrics_data.append({"timestamp": timestamp, "value": float(value)})
+            try:
+                timestamp = time_labels[key]
+                metrics_data.append({"timestamp": timestamp, "value": float(value)})
+            # pylint: disable=bare-except
+            except:
+                self.logger.error(
+                    "Failed to get EUROSTAT observation for series_id: %s, date: %s, value: %s",
+                    series_id,
+                    timestamp,
+                    value[0],
+                )
         return metrics_data

@@ -37,7 +37,7 @@ class FRED(DataProvider):
             # pylint: disable=bare-except
             except:
                 self.logger.error(
-                    "Failed to get observation for series_id: %s, date: %s, value: %s",
+                    "Failed to get FRED observation for series_id: %s, date: %s, value: %s",
                     series_id,
                     observation["date"],
                     observation["value"],

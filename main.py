@@ -26,17 +26,13 @@ async def pulse():
     provider = request.args.get("provider", "fred").upper()
     series_id = request.args.get("series_id")
     frequency = request.args.get("frequency", "d")
-    unit = request.args.get("unit", None)
-    coicop = request.args.get("coicop", None)
-    location = request.args.get("location", None)
+    filter_key = request.args.get("filter_key", None)
 
     provider = PROVIDERS.get(provider, None)
     if provider is None:
         abort(400, description=f"Invalid provider {provider}")
 
-    observations = await provider.fetch_data(
-        series_id, frequency, unit, coicop, location
-    )
+    observations = await provider.fetch_data(series_id, frequency, filter_key)
     metrics_data = await provider.convert_to_time_series(series_id, observations)
     return jsonify(metrics_data)
 
