@@ -118,4 +118,4 @@ This project is licensed under the **MIT License**. See the `LICENSE` file for d
 ---
 
 ## 👨‍💻 Author
-Created with ❤️ by **[Serhii Fedusov](https://github.com/Frame17)**, with support from Anastasiia Shabliienko.
+Created with ❤️ by **[Serhii Fedusov](https://github.com/Frame17)**, with support from **[Anastasiia Shabliienko](https://www.linkedin.com/in/anastasiia-shabliienko/)**.
