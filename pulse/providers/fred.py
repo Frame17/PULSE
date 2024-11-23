@@ -42,4 +42,4 @@ class FRED(DataProvider):
                     observation["date"],
                     observation["value"],
                 )
-        return metrics_data
+        return list(reversed(metrics_data))
