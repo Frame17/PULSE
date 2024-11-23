@@ -118,4 +118,4 @@ This project is licensed under the **MIT License**. See the `LICENSE` file for d
 ---
 
 ## 👨‍💻 Author
-Created with ❤️ by **[Serhii Fedusov](https://github.com/your-username)** with the support from Anastasiia Shablienko.
+Created with ❤️ by **[Serhii Fedusov](https://github.com/your-username)** with the support from Anastasiia Shabliienko.
