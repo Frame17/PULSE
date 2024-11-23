@@ -1391,7 +1391,7 @@
                         },
                         {
                             "selector": "value",
-                            "text": "us_bond_yield_2year",
+                            "text": " ",
                             "type": "number"
                         }
                     ],
@@ -1403,7 +1403,7 @@
                     "format": "table",
                     "global_query_id": "",
                     "parser": "backend",
-                    "refId": "A",
+                    "refId": "us_bond_yield_2year",
                     "root_selector": "",
                     "source": "url",
                     "type": "json",
@@ -1428,7 +1428,7 @@
                         },
                         {
                             "selector": "value",
-                            "text": "us_bond_yield_10year",
+                            "text": " ",
                             "type": "number"
                         }
                     ],
@@ -1441,7 +1441,7 @@
                     "global_query_id": "",
                     "hide": false,
                     "parser": "backend",
-                    "refId": "B",
+                    "refId": "us_bond_yield_10year",
                     "root_selector": "",
                     "source": "url",
                     "type": "json",
@@ -1551,7 +1551,7 @@
                         },
                         {
                             "selector": "value",
-                            "text": "",
+                            "text": " ",
                             "type": "number"
                         }
                     ],
@@ -1593,7 +1593,7 @@
                         },
                         {
                             "selector": "value",
-                            "text": "",
+                            "text": " ",
                             "type": "number"
                         }
                     ],
@@ -1790,7 +1790,7 @@
                     }
                 }
             ],
-            "title": "KEY Interest Rate",
+            "title": "Key Interest Rate",
             "type": "timeseries"
         },
         {
@@ -1851,7 +1851,20 @@
                         ]
                     }
                 },
-                "overrides": []
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "US US"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "US"
+                            }
+                        ]
+                    }
+                ]
             },
             "gridPos": {
                 "h": 8,
@@ -3044,8 +3057,7 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green",
-                                "value": null
+                                "color": "green"
                             },
                             {
                                 "color": "red",
@@ -3183,8 +3195,7 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green",
-                                "value": null
+                                "color": "green"
                             },
                             {
                                 "color": "red",
@@ -3309,8 +3320,7 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green",
-                                "value": null
+                                "color": "green"
                             },
                             {
                                 "color": "red",
@@ -5482,6 +5492,6 @@
     "timezone": "browser",
     "title": "PULSE",
     "uid": "de4bml1zywbggd",
-    "version": 22,
+    "version": 23,
     "weekStart": ""
 }
