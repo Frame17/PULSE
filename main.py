@@ -4,6 +4,7 @@ import os
 from dotenv import load_dotenv
 from flask import Flask, abort, jsonify, request
 
+from pulse.aggregations import aggregate_mean
 from pulse.providers.ecb import ECB
 from pulse.providers.eurostat import Eurostat
 from pulse.providers.fred import FRED
@@ -27,6 +28,7 @@ async def pulse():
     series_id = request.args.get("series_id")
     frequency = request.args.get("frequency", "d")
     filter_key = request.args.get("filter_key", None)
+    aggregate = request.args.get("aggregate", None)
     offset = request.args.get("offset", None)
 
     provider = PROVIDERS.get(provider, None)
@@ -40,6 +42,8 @@ async def pulse():
             y, etc = metric["timestamp"].split("-", 1)
             y = int(y) - int(offset)
             metric["timestamp"] = f"{y}-{etc}"
+    if aggregate is not None:
+        metrics_data = aggregate_mean(aggregate, metrics_data)
     return jsonify(metrics_data)
 
 

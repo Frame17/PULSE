@@ -37,7 +37,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -69,6 +69,22 @@
                             {
                                 "id": "displayName",
                                 "value": "US"
+                            },
+                            {
+                                "id": "decimals",
+                                "value": 2
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "DE"
+                        },
+                        "properties": [
+                            {
+                                "id": "decimals",
+                                "value": 2
                             }
                         ]
                     }
@@ -98,106 +114,6 @@
             },
             "pluginVersion": "11.3.0",
             "targets": [
-                {
-                    "columns": [
-                        {
-                            "selector": "timestamp",
-                            "text": "",
-                            "timestampFormat": "",
-                            "type": "timestamp"
-                        },
-                        {
-                            "selector": "value",
-                            "text": "",
-                            "type": "number"
-                        }
-                    ],
-                    "computed_columns": [],
-                    "datasource": {
-                        "type": "yesoreyeram-infinity-datasource",
-                        "uid": "fe4ehk2sno6wwf"
-                    },
-                    "filters": [],
-                    "format": "table",
-                    "global_query_id": "",
-                    "hide": true,
-                    "parser": "backend",
-                    "refId": "A",
-                    "root_selector": "",
-                    "source": "url",
-                    "type": "json",
-                    "url": "pulse",
-                    "url_options": {
-                        "data": "",
-                        "method": "GET",
-                        "params": [
-                            {
-                                "key": "series_id",
-                                "value": "NAMQ_10_GDP"
-                            },
-                            {
-                                "key": "provider",
-                                "value": "eurostat"
-                            },
-                            {
-                                "key": "filter_key",
-                                "value": "Q.CP_MEUR.NSA.B1GQ.DE"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "columns": [
-                        {
-                            "selector": "timestamp",
-                            "text": "",
-                            "timestampFormat": "",
-                            "type": "timestamp"
-                        },
-                        {
-                            "selector": "value",
-                            "text": "",
-                            "type": "number"
-                        }
-                    ],
-                    "computed_columns": [],
-                    "datasource": {
-                        "type": "yesoreyeram-infinity-datasource",
-                        "uid": "fe4ehk2sno6wwf"
-                    },
-                    "filters": [],
-                    "format": "table",
-                    "global_query_id": "",
-                    "hide": true,
-                    "parser": "backend",
-                    "refId": "B",
-                    "root_selector": "",
-                    "source": "url",
-                    "type": "json",
-                    "url": "pulse",
-                    "url_options": {
-                        "data": "",
-                        "method": "GET",
-                        "params": [
-                            {
-                                "key": "series_id",
-                                "value": "NAMQ_10_GDP"
-                            },
-                            {
-                                "key": "provider",
-                                "value": "eurostat"
-                            },
-                            {
-                                "key": "filter_key",
-                                "value": "Q.CP_MEUR.NSA.B1GQ.DE"
-                            },
-                            {
-                                "key": "offset",
-                                "value": "-1"
-                            }
-                        ]
-                    }
-                },
                 {
                     "columns": [
                         {
@@ -250,10 +166,110 @@
                         "type": "__expr__",
                         "uid": "__expr__"
                     },
-                    "expression": "(($A - $B) / $B) * 100  - $E",
+                    "expression": "(1 + (($A - $B) / $B)* 100) / (1 + $E) - 1",
                     "hide": false,
                     "refId": "DE",
                     "type": "math"
+                },
+                {
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "timestampFormat": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "computed_columns": [],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "hide": true,
+                    "parser": "backend",
+                    "refId": "A",
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "NAMQ_10_GDP"
+                            },
+                            {
+                                "key": "provider",
+                                "value": "eurostat"
+                            },
+                            {
+                                "key": "filter_key",
+                                "value": "Q.CP_MEUR.SCA.B1GQ.DE"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "timestampFormat": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "computed_columns": [],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "hide": true,
+                    "parser": "backend",
+                    "refId": "B",
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "NAMQ_10_GDP"
+                            },
+                            {
+                                "key": "provider",
+                                "value": "eurostat"
+                            },
+                            {
+                                "key": "filter_key",
+                                "value": "Q.CP_MEUR.SCA.B1GQ.DE"
+                            },
+                            {
+                                "key": "offset",
+                                "value": "-1"
+                            }
+                        ]
+                    }
                 },
                 {
                     "columns": [
@@ -299,6 +315,10 @@
                             {
                                 "key": "filter_key",
                                 "value": "M.I15.CP00.DE"
+                            },
+                            {
+                                "key": "aggregate",
+                                "value": "Q"
                             }
                         ]
                     }
@@ -351,6 +371,10 @@
                             {
                                 "key": "offset",
                                 "value": "-1"
+                            },
+                            {
+                                "key": "aggregate",
+                                "value": "Q"
                             }
                         ]
                     }
@@ -367,13 +391,13 @@
                     "type": "math"
                 }
             ],
-            "title": "GDP Growth Rate",
+            "title": "Last Quarter GDP Growth Rate",
             "type": "gauge"
         },
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -395,7 +419,32 @@
                         ]
                     }
                 },
-                "overrides": []
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "US"
+                        },
+                        "properties": [
+                            {
+                                "id": "decimals",
+                                "value": 2
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "DE"
+                        },
+                        "properties": [
+                            {
+                                "id": "decimals",
+                                "value": 2
+                            }
+                        ]
+                    }
+                ]
             },
             "gridPos": {
                 "h": 8,
@@ -628,13 +677,13 @@
                     "type": "math"
                 }
             ],
-            "title": "Inflation Rate",
+            "title": "Last Months Inflation",
             "type": "gauge"
         },
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -730,106 +779,6 @@
                         {
                             "selector": "timestamp",
                             "text": "",
-                            "timestampFormat": "",
-                            "type": "timestamp"
-                        },
-                        {
-                            "selector": "value",
-                            "text": "",
-                            "type": "number"
-                        }
-                    ],
-                    "computed_columns": [],
-                    "datasource": {
-                        "type": "yesoreyeram-infinity-datasource",
-                        "uid": "fe4ehk2sno6wwf"
-                    },
-                    "filters": [],
-                    "format": "table",
-                    "global_query_id": "",
-                    "hide": true,
-                    "parser": "backend",
-                    "refId": "A",
-                    "root_selector": "",
-                    "source": "url",
-                    "type": "json",
-                    "url": "pulse",
-                    "url_options": {
-                        "data": "",
-                        "method": "GET",
-                        "params": [
-                            {
-                                "key": "series_id",
-                                "value": "NAMQ_10_GDP"
-                            },
-                            {
-                                "key": "provider",
-                                "value": "eurostat"
-                            },
-                            {
-                                "key": "filter_key",
-                                "value": "Q.CP_MEUR.NSA.B1GQ.DE"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "columns": [
-                        {
-                            "selector": "timestamp",
-                            "text": "",
-                            "timestampFormat": "",
-                            "type": "timestamp"
-                        },
-                        {
-                            "selector": "value",
-                            "text": "",
-                            "type": "number"
-                        }
-                    ],
-                    "computed_columns": [],
-                    "datasource": {
-                        "type": "yesoreyeram-infinity-datasource",
-                        "uid": "fe4ehk2sno6wwf"
-                    },
-                    "filters": [],
-                    "format": "table",
-                    "global_query_id": "",
-                    "hide": true,
-                    "parser": "backend",
-                    "refId": "B",
-                    "root_selector": "",
-                    "source": "url",
-                    "type": "json",
-                    "url": "pulse",
-                    "url_options": {
-                        "data": "",
-                        "method": "GET",
-                        "params": [
-                            {
-                                "key": "series_id",
-                                "value": "NAMQ_10_GDP"
-                            },
-                            {
-                                "key": "provider",
-                                "value": "eurostat"
-                            },
-                            {
-                                "key": "filter_key",
-                                "value": "Q.CP_MEUR.NSA.B1GQ.DE"
-                            },
-                            {
-                                "key": "offset",
-                                "value": "-1"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "columns": [
-                        {
-                            "selector": "timestamp",
-                            "text": "",
                             "type": "timestamp"
                         },
                         {
@@ -877,10 +826,110 @@
                         "type": "__expr__",
                         "uid": "__expr__"
                     },
-                    "expression": "(($A - $B) / $B) * 100  - $E",
+                    "expression": "(1 + (($A - $B) / $B)* 100) / (1 + $E) - 1",
                     "hide": false,
                     "refId": "DE",
                     "type": "math"
+                },
+                {
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "timestampFormat": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "computed_columns": [],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "hide": true,
+                    "parser": "backend",
+                    "refId": "A",
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "NAMQ_10_GDP"
+                            },
+                            {
+                                "key": "provider",
+                                "value": "eurostat"
+                            },
+                            {
+                                "key": "filter_key",
+                                "value": "Q.CP_MEUR.SCA.B1GQ.DE"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "columns": [
+                        {
+                            "selector": "timestamp",
+                            "text": "",
+                            "timestampFormat": "",
+                            "type": "timestamp"
+                        },
+                        {
+                            "selector": "value",
+                            "text": "",
+                            "type": "number"
+                        }
+                    ],
+                    "computed_columns": [],
+                    "datasource": {
+                        "type": "yesoreyeram-infinity-datasource",
+                        "uid": "fe4ehk2sno6wwf"
+                    },
+                    "filters": [],
+                    "format": "table",
+                    "global_query_id": "",
+                    "hide": true,
+                    "parser": "backend",
+                    "refId": "B",
+                    "root_selector": "",
+                    "source": "url",
+                    "type": "json",
+                    "url": "pulse",
+                    "url_options": {
+                        "data": "",
+                        "method": "GET",
+                        "params": [
+                            {
+                                "key": "series_id",
+                                "value": "NAMQ_10_GDP"
+                            },
+                            {
+                                "key": "provider",
+                                "value": "eurostat"
+                            },
+                            {
+                                "key": "filter_key",
+                                "value": "Q.CP_MEUR.SCA.B1GQ.DE"
+                            },
+                            {
+                                "key": "offset",
+                                "value": "-1"
+                            }
+                        ]
+                    }
                 },
                 {
                     "columns": [
@@ -926,6 +975,10 @@
                             {
                                 "key": "filter_key",
                                 "value": "M.I15.CP00.DE"
+                            },
+                            {
+                                "key": "aggregate",
+                                "value": "Q"
                             }
                         ]
                     }
@@ -965,7 +1018,7 @@
                         "params": [
                             {
                                 "key": "series_id",
-                                "value": "prc_hicp_midx "
+                                "value": "prc_hicp_midx"
                             },
                             {
                                 "key": "provider",
@@ -978,6 +1031,10 @@
                             {
                                 "key": "offset",
                                 "value": "-1"
+                            },
+                            {
+                                "key": "aggregate",
+                                "value": "Q"
                             }
                         ]
                     }
@@ -1000,7 +1057,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -1285,7 +1342,7 @@
                     "type": "math"
                 }
             ],
-            "title": "Consumer Price Index (CPI)",
+            "title": "Inflation % based on HICP",
             "type": "timeseries"
         },
         {
@@ -1304,7 +1361,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -1464,7 +1521,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -1632,7 +1689,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -1796,7 +1853,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -2040,7 +2097,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -2162,7 +2219,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -2297,7 +2354,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -2488,7 +2545,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -2732,7 +2789,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -2874,7 +2931,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -3012,7 +3069,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -3057,7 +3114,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -3150,7 +3208,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -3195,7 +3253,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -3275,7 +3334,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -3320,7 +3379,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -3462,7 +3522,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -3507,7 +3567,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -3629,7 +3690,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -3674,7 +3735,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -3851,7 +3913,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -3896,7 +3958,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -3976,7 +4039,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -4021,7 +4084,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -4114,7 +4178,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -4159,7 +4223,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -4239,7 +4304,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -4284,7 +4349,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -4364,7 +4430,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -4409,7 +4475,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -4502,7 +4569,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -4547,7 +4614,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -4627,7 +4695,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -4672,7 +4740,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -4752,7 +4821,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -4797,7 +4866,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -4877,7 +4947,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -4922,7 +4992,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -5006,7 +5077,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -5051,7 +5122,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -5144,7 +5216,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -5189,7 +5261,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -5282,7 +5355,7 @@
         {
             "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "ae4jc0j1a2qdcf"
+                "uid": "ee640nd9lem0wa"
             },
             "fieldConfig": {
                 "defaults": {
@@ -5327,7 +5400,8 @@
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green"
+                                "color": "green",
+                                "value": null
                             },
                             {
                                 "color": "red",
@@ -5492,6 +5566,6 @@
     "timezone": "browser",
     "title": "PULSE",
     "uid": "de4bml1zywbggd",
-    "version": 23,
+    "version": 11,
     "weekStart": ""
 }
